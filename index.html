@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Accordion Generator</title>
+
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3 left-panel">
+				<h3>Add Accordion</h3>
+				  <div class="form-group">
+				    <label>Enter Title</label>
+				    <input type="text" class="form-control" id="accordion-title">
+				  </div>
+				  <div class="form-group">
+				    <label>Enter Content</label>
+				   	<textarea id="accordion-content" class="form-control"></textarea>
+				  </div>
+				  <button id="add-accordion" class="btn btn-default">Add Accordion</button>
+			</div>
+			<div class="col-md-3 middle-panel">
+				<h3>Accordion List</h3>
+				<ul id="sortable">
+					
+				</ul>
+				<button id="generate" class="btn btn-default">Generate Source Code</button>
+			</div>
+			<div class="col-md-6 right-panel">
+				<h3>Source Code</h3><button id="select-all">Select All</button>
+				<div id="result">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+</html>

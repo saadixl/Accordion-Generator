@@ -25,3 +25,13 @@
 	font-family: monospace;
 	font-size: 10px;
 }
+
+.delete-button{
+    background: #323232;
+    color: white;
+    text-align: center;
+    float: right;
+    width: 21px;
+    height: 20px;
+    cursor: pointer;;
+}

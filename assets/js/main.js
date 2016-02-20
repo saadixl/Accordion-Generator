@@ -59,20 +59,7 @@ $("#generate").click(function(){
 function generateAccordionCode(){
 	$("#result").text("");
 	var accordionStr = '';
-	$("#result").append('<p> &lt;!doctype html&gt; </p>'+
-						'<p> &lt;html lang="en"&gt; </p>'+
-						'<p> &lt;head&gt;  </p>'+
-						'<p> &lt;meta charset="utf-8"&gt;  </p>'+
-						'<p> &lt;title&gt;My Accordion&lt;/title&gt;  </p>'+
-						'<p> &lt;style type="text/css"&gt;  </p>'+
-						'<p> 	.panel{box-shadow: 0 0 1px #323232;}  </p>'+
-						'<p>   	.panel-heading a{text-decoration: none;} </p>'+
-						'<p>    .panel-heading{background: #f5f5f5;padding: 5px;}</p>'+
-						'<p>    .panel-collapse{padding:5px;display: none;}</p>'+
-						'<p> &lt;/style&gt;</p>'+
-						'<p> &lt;/head&gt;</p>'+
-						'<p> &lt;body&gt;  </p>'+
-						'<p> 		&lt;div class="panel-group collapsible" id="accordion"&gt;  </p>');
+	$("#result").append('<p>&lt;div class="panel-group collapsible" id="accordion"&gt;  </p>');
 		var i = 0;
 		$("#sortable li").each(function(){
 			var thisTitle = $(this).find('p.title').text();
@@ -85,32 +72,26 @@ function generateAccordionCode(){
 				thisContent = thisContent.replace("<", "&lt;");
 				thisContent = thisContent.replace(">", "&gt;");
 				thisContent = thisContent.replace("/", "&#47;");
-				$("#result").append('<p> &lt;div class="panel panel-default"&gt; </p>'+
-									'<p> &lt;div class="panel-heading"&gt; </p>' +
-									'<p> &lt;h3 class="panel-title"&gt;</p>' +
-									'<p> &lt;a data-toggle="collapse" data-parent="#accordion"</p>' +
-									'<p> href="#collapse'+ i +'"&gt;</p>' +
-									'<p> '+thisTitle+'</p>' +
-									'<p> &lt;/a&gt;</p>' +
-									'<p> &lt;/h3&gt;</p>' +
-									'<p> &lt;/div&gt;</p>' +
-									'<p> &lt;div id="collapse'+i+'" class="panel-collapse collapse"&gt;</p>' +
-									'<p> &lt;div class="panel-body"&gt;</p>' +
-									'<p> '+thisContent+'</p>' +
-									'<p> &lt;/div&gt;</p>' +
-									'<p> &lt;/div&gt;</p>' +
-									'<p> &lt;/div&gt;</p>');
+				$("#result").append('<p> &nbsp;&nbsp;&lt;div class="panel panel-default"&gt; </p>'+
+									'<p> &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="panel-heading"&gt; </p>' +
+									'<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3 class="panel-title"&gt;</p>' +
+									'<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a data-toggle="collapse" data-parent="#accordion"</p>' +
+									'<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;href="#collapse'+ i +'"&gt;</p>' +
+									'<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+thisTitle+'</p>' +
+									'<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;</p>' +
+									'<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/h3&gt;</p>' +
+									'<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</p>' +
+									'<p> &nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="collapse'+i+'" class="panel-collapse collapse"&gt;</p>' +
+									'<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="panel-body"&gt;</p>' +
+									'<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+thisContent+'</p>' +
+									'<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</p>' +
+									'<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</p>' +
+									'<p> &nbsp;&nbsp;&lt;/div&gt;</p>');
 
 			}
 
 		});
-		$("#result").append('<p> &lt;/div&gt;</p>'+
-							'<p> &lt;script src="http://code.jquery.com/jquery-1.10.2.js"&gt;&lt;/script&gt;</p>'+
-							'<p> &lt;script type="text/javascript"&gt;</p>'+
-							'<p> 	(function(){$(".panel-heading").click(function(){$(this).parent().siblings(".panel").find(".panel-collapse").slideUp();$(this).siblings(".panel-collapse").slideDown();});}());</p>'+
-							'<p> &lt;/script&gt;</p>'+
-							'<p> &lt;/body&gt;</p>'+
-							'<p> &lt;/html&gt;</p>');
+		$("#result").append('<p> &lt;/div&gt;</p>');
 }
 
 $("#select-all").click(function(){
